@@ -1,0 +1,492 @@
+<html><head><base href="/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBS - Software & Business Solutions</title>
+
+<!-- Estilos y fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<style>
+:root {
+  --primary-dark: #0C134F;
+  --primary: #1D267D;
+  --secondary: #5C469C;
+  --accent: #D4ADFC;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.hover-scale {
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  background: var(--primary);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.service-card:hover svg {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.service-card:hover h3,
+.service-card:hover p {
+  color: white;
+}
+
+.service-card svg {
+  transition: all 0.3s ease;
+  color: var(--primary);
+}
+
+.service-card h3,
+.service-card p {
+  transition: all 0.3s ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+</style>
+</head>
+
+<body class="overflow-x-hidden bg-gray-50">
+  <!-- Navegación -->
+  <nav class="fixed w-full bg-white shadow-md z-50">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="#inicio" class="flex items-center">
+            <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none">
+              <path d="M20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5Z" stroke="var(--primary)" stroke-width="2"/>
+              <path d="M15 20H25M20 15V25" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="ml-3 text-xl font-bold text-gray-800">SBS</span>
+          </a>
+        </div>
+        
+        <div class="hidden md:flex space-x-8">
+          <a href="#inicio" class="nav-link text-gray-600 hover:text-gray-900">Inicio</a>
+          <a href="#somos" class="nav-link text-gray-600 hover:text-gray-900">Somos</a>
+          <a href="#vision" class="nav-link text-gray-600 hover:text-gray-900">Visión</a>
+          <a href="#servicios" class="nav-link text-gray-600 hover:text-gray-900">Servicios</a>
+          <a href="#contacto" class="nav-link text-gray-600 hover:text-gray-900">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="pt-32 pb-20 px-6 relative">
+    <!-- Particles container - already at z-index: 1 -->
+    <div id="particles-js" class="absolute inset-0 w-full h-full" style="background: linear-gradient(135deg, #0C134F, #1D267D); z-index: 1;"></div>
+    
+    <!-- Main content container - increase z-index to 2 for all content -->
+    <div class="container mx-auto relative" style="z-index: 2;">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Text content - already properly layered -->
+        <div class="animate-fade-in">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Transformamos procesos empresariales con tecnología innovadora
+          </h1>
+          <p class="text-lg text-gray-200 mb-8">
+            Ofrecemos servicios de ingeniería de procesos e ingeniería de software, especializándonos en modelamiento de procesos empresariales y automatización RPA.
+          </p>
+          <a href="#contacto" class="bg-[#5C469C] hover:bg-[#D4ADFC] hover:text-gray-900 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
+            Comienza ahora
+          </a>
+        </div>
+        
+        <!-- SVG illustration - updated with z-index control -->
+        <div class="relative animate-fade-in" style="z-index: 2;">
+          <svg class="w-full h-auto" viewBox="0 0 400 300" fill="none" style="position: relative; z-index: 2;">
+            <!-- Updated circle with solid fill -->
+            <circle cx="200" cy="150" r="100" fill="#D4ADFC" style="z-index: 2;">
+              <animate attributeName="r" values="100;110;100" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            
+            <!-- Connecting lines -->
+            <path d="M150 150C150 116.863 176.863 90 210 90C243.137 90 270 116.863 270 150C270 183.137 243.137 210 210 210" 
+                  stroke="var(--primary)" stroke-width="4" stroke-linecap="round">
+              <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2s" fill="freeze"/>
+            </path>
+            
+            <!-- Tech nodes -->
+            <circle cx="160" cy="120" r="8" fill="var(--secondary)">
+              <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="240" cy="180" r="8" fill="var(--secondary)">
+              <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <circle cx="200" cy="150" r="8" fill="var(--primary)">
+              <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" begin="1s"/>
+            </circle>
+            
+            <!-- Connecting dots -->
+            <line x1="160" y1="120" x2="200" y2="150" stroke="var(--primary)" stroke-width="2">
+              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="1.5s" fill="freeze"/>
+            </line>
+            <line x1="200" y1="150" x2="240" y2="180" stroke="var(--primary)" stroke-width="2">
+              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="1.5s" fill="freeze"/>
+            </line>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Somos Section -->
+  <section id="somos" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Quiénes Somos</h2>
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Somos un equipo de profesionales enfocado en proporcionar soluciones innovadoras y personalizadas para la optimización de procesos empresariales y tecnológicos. Nos dedicamos a transformar las operaciones de nuestros clientes aplicando metodologías de vanguardia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión y Visión -->
+  <section id="vision" class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-scale">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Nuestra Misión</h3>
+          <p class="text-gray-600">
+            Ser un referente nacional en el modelamiento y automatización de tareas en procesos empresariales, ofreciendo tecnología avanzada y soluciones creativas.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg hover-scale">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Nuestra Visión</h3>
+          <p class="text-gray-600">
+            Contribuir al progreso empresarial ofreciendo soluciones informáticas de calidad que aborden las necesidades y desafíos de la industria.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Nuestros Servicios</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Servicio 1 -->
+        <div class="service-card p-6">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Mapeo de Procesos</h3>
+          <p class="text-gray-600">Análisis, modelamiento (BPMN 2.0) y mejora de procesos empresariales.</p>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="service-card p-6">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Automatización</h3>
+          <p class="text-gray-600">Implementación de RPA, desarrollo de scripts y bots, integración de sistemas.</p>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="service-card p-6">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Ingeniería de Software</h3>
+          <p class="text-gray-600">Desarrollo a medida, mantenimiento y consultoría de sistemas.</p>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="service-card p-6">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Ciberseguridad</h3>
+          <p class="text-gray-600">Pentesting, detección de vulnerabilidades y soluciones de seguridad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-lg mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Contáctanos</h2>
+        <form class="space-y-6">
+          <div>
+            <label class="block text-gray-700 mb-2" for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+          
+          <div>
+            <label class="block text-gray-700 mb-2" for="email">Correo electrónico</label>
+            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+          
+          <div>
+            <label class="block text-gray-700 mb-2" for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+          </div>
+          
+          <div>
+            <label class="block text-gray-700 mb-2" for="mensaje">Mensaje</label>
+            <textarea id="mensaje" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-xl font-bold">SBS</h3>
+          <p class="text-gray-400 mt-2">Software & Business Solutions</p>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="https://linkedin.com" class="hover:text-accent transition duration-300">LinkedIn</a>
+          <a href="https://twitter.com" class="hover:text-accent transition duration-300">X</a>
+          <a href="https://facebook.com" class="hover:text-accent transition duration-300">Facebook</a>
+          
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 SBS. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollToTop" class="fixed bottom-8 right-8 bg-primary hover:bg-primary-dark text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+  </button>
+
+  <script>
+    // Smooth scroll para navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Scroll to top button functionality
+    const scrollToTopButton = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopButton.style.opacity = '1';
+      } else {
+        scrollToTopButton.style.opacity = '0';
+      }
+    });
+
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animación de elementos al hacer scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Animate services on scroll
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    const serviceObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = `fadeIn 0.5s ease forwards ${index * 0.2}s`;
+          entry.target.style.opacity = "1";
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    serviceCards.forEach(card => {
+      card.style.opacity = "0";
+      serviceObserver.observe(card);
+    });
+
+    // Initialize particles.js
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 60, // Reduced number of particles
+          density: {
+            enable: true,
+            value_area: 1500 // Increased area to spread particles more
+          }
+        },
+        color: {
+          value: '#D4ADFC'
+        },
+        shape: {
+          type: 'circle'
+        },
+        opacity: {
+          value: 0.5,
+          random: false
+        },
+        size: {
+          value: 6, // Slightly larger particles
+          random: true,
+          anim: {
+            enable: true,
+            speed: 4,
+            size_min: 4,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 200, // Increased distance between particles
+          color: '#5C469C',
+          opacity: 0.4,
+          width: 2
+        },
+        move: {
+          enable: true,
+          speed: 6, // Increased speed
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'window', // Changed to window for full-screen detection
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'repulse'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 200, // Increased repulse distance
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    });
+
+    // Add click handler for logo
+    document.querySelector('nav a').addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body></html>
