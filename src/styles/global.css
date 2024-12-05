@@ -126,3 +126,11 @@ body {
   .nav-link:hover::after {
     width: 100%; /* Subrayado se expande a todo el ancho del enlace */
   }
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
