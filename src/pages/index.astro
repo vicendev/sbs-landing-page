@@ -4,15 +4,22 @@ import MainLayout from "../layouts/MainLayout.astro";
 import HeroSection from "../sections/home/HeroSection.astro"
 import AboutSection from "../sections/home/AboutSection.astro"
 import MissionSection from "../sections/home/MissionSection.astro"
+import VisionSection from "../sections/home/VisionSection.astro"
 import ServicesSection from "../sections/home/ServicesSection.astro"
 import LeadForm from "../sections/home/LeadForm.astro"
 
 ---
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/global.css">
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.0/tsparticles.bundle.min.js"></script>
+
 <MainLayout title="en">
 	<HeroSection />
 	<AboutSection />
 	<MissionSection />
+	<VisionSection />
 	<ServicesSection />
 	<LeadForm />
 </MainLayout>
+
