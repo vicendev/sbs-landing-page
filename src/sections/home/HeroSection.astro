@@ -1,12 +1,21 @@
-  <!-- Hero Section -->
-  <section id="inicio" class="pt-32 pb-20 px-6 relative">
-    <!-- Particles container - already at z-index: 1 -->
-    <div id="particles-js" class="absolute inset-0 w-full h-full" style="background: linear-gradient(135deg, #0C134F, #1D267D); z-index: 1;"></div>
-    
-    <!-- Main content container - increase z-index to 2 for all content -->
+---
+// Importa correctamente el componente ParticlesCustom
+import ParticlesCustom from "../../components/ui/ParticlesCustom.astro";
+---
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.0/tsparticles.bundle.min.js"></script>
+<!-- Hero Section -->
+<section id="inicio" class="pt-32 pb-20 px-6 relative">
+  <!-- Particles container - ya está con z-index: 1 -->
+  <div id="particles-js" class="absolute inset-0 w-full h-full" style="background: linear-gradient(135deg, #0C134F, #1D267D); z-index: 1;"></div>
+  
+  <!-- Aquí usa el componente ParticlesCustom -->
+  <ParticlesCustom />
+
+  <div style="position: relative; z-index: 1;">
+    <!-- Contenedor del contenido principal - aumenta el z-index a 2 para todo el contenido -->
     <div class="container mx-auto relative" style="z-index: 2;">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Text content - already properly layered -->
+        <!-- Contenido de texto - ya tiene el z-index correctamente -->
         <div class="animate-fade-in">
           <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
             Transformamos procesos empresariales con tecnología innovadora
@@ -19,21 +28,21 @@
           </a>
         </div>
         
-        <!-- SVG illustration - updated with z-index control -->
+        <!-- Ilustración SVG - actualizada con el control del z-index -->
         <div class="relative animate-fade-in" style="z-index: 2;">
           <svg class="w-full h-auto" viewBox="0 0 400 300" fill="none" style="position: relative; z-index: 2;">
-            <!-- Updated circle with solid fill -->
+            <!-- Círculo actualizado con relleno sólido -->
             <circle cx="200" cy="150" r="100" fill="#D4ADFC" style="z-index: 2;">
               <animate attributeName="r" values="100;110;100" dur="4s" repeatCount="indefinite"/>
             </circle>
             
-            <!-- Connecting lines -->
+            <!-- Líneas conectando -->
             <path d="M150 150C150 116.863 176.863 90 210 90C243.137 90 270 116.863 270 150C270 183.137 243.137 210 210 210" 
                   stroke="var(--primary)" stroke-width="4" stroke-linecap="round">
               <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2s" fill="freeze"/>
             </path>
             
-            <!-- Tech nodes -->
+            <!-- Nodos tecnológicos -->
             <circle cx="160" cy="120" r="8" fill="var(--secondary)">
               <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
             </circle>
@@ -44,15 +53,16 @@
               <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" begin="1s"/>
             </circle>
             
-            <!-- Connecting dots -->
+            <!-- Conexión de puntos -->
             <line x1="160" y1="120" x2="200" y2="150" stroke="var(--primary)" stroke-width="2">
               <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="1.5s" fill="freeze"/>
             </line>
             <line x1="200" y1="150" x2="240" y2="180" stroke="var(--primary)" stroke-width="2">
-              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="1.5s" fill="freeze"/>
+              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="1.5s" fill="freeze" begin="0.5s"/>
             </line>
           </svg>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

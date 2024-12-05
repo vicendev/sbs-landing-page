@@ -1,0 +1,36 @@
+---
+// ParticlesCustom.astro
+import { loadFull } from "tsparticles"; // Asegúrate de importar esto
+
+const particlesConfig = {
+  background: {
+    color: { value: "#000000" },
+  },
+  particles: {
+    number: { value: 100 },
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    size: { value: 3, random: true },
+    move: { enable: true, speed: 3 },
+  },
+};
+---
+
+<div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: 0;"></div>
+
+<script type="module">
+  import { loadFull } from 'tsparticles';
+
+  const particles = await loadFull();
+  const particlesConfigJson = `{{ JSON.stringify(particlesConfig) }}`; // Usamos JSON.stringify para convertir el objeto a cadena
+  particles.load("particles-js", JSON.parse(particlesConfigJson));  // Pasamos el objeto como un JSON parseado
+
+  // Ejemplo básico para inicializar particles.js
+particlesJS("particles-container", {
+  particles: {
+    number: { value: 50 },
+    size: { value: 3 },
+  },
+});
+</script>
+
