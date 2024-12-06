@@ -1,17 +1,15 @@
 ---
 // Importa correctamente el componente ParticlesCustom
-import ParticlesCustom from "../../components/ui/ParticlesCustom.astro";
+import { CustomParticles } from '../../react/components/ui/CustomParticles';
 ---
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.0/tsparticles.bundle.min.js"></script>
 <!-- Hero Section -->
 <section id="inicio" class="pt-32 pb-20 px-6 relative">
-  <!-- Particles container - ya está con z-index: 1 -->
-  <div id="particles-js" class="absolute inset-0 w-full h-full" style="background: linear-gradient(135deg, #0C134F, #1D267D); z-index: 1;"></div>
   
-  <!-- Aquí usa el componente ParticlesCustom -->
-  <ParticlesCustom />
+  <div class="absolute inset-0 w-full h-full" style="z-index: 1;">
+    <CustomParticles client:only="react" />
+  </div>
 
-  <div style="position: relative; z-index: 1;">
+  <div class="relative z-10">
     <!-- Contenedor del contenido principal - aumenta el z-index a 2 para todo el contenido -->
     <div class="container mx-auto relative" style="z-index: 2;">
       <div class="grid md:grid-cols-2 gap-12 items-center">
