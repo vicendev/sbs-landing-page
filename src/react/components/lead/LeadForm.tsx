@@ -12,8 +12,6 @@ import { LoadingSpinner } from "../ui/LoadingSpinner";
 import IndustrySelector from "../ui/Selects/IndustrySelect";
 import { useIndustries } from "../../hooks/useIndustries";
 
-import { PUBLIC_SUPABASE_KEY } from "astro:env/client"
-
 export const LeadForm = () => {
   let captcha: ReCAPTCHA | null;
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);

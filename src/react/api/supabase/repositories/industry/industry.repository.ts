@@ -18,7 +18,7 @@ export class IndustryRepository {
 
   async getAllIndustriesByLanguage(lang: string = "es"): Promise<Industry[]> {
 
-    const { data, error } = await this.supabase.from('table_industries').select().filter("language", 'eq', lang);
+    const { data } = await this.supabase.from('table_industries').select().filter("language", 'eq', lang);
 
     return data as Industry[];
   }

@@ -18,7 +18,7 @@ export class CountryRepository {
 
   async getAllCountries(): Promise<Country[]> {
 
-    const { data, error } = await this.supabase.from('table_countries').select();
+    const { data } = await this.supabase.from('table_countries').select();
 
     return data as Country[];
   }
