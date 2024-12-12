@@ -126,6 +126,46 @@ body {
   .nav-link:hover::after {
     width: 100%; /* Subrayado se expande a todo el ancho del enlace */
   }
+
+  img {
+    outline: none; /* Elimina bordes de enfoque */
+    user-select: none; /* Evita selección */
+    pointer-events: none; /* Deshabilita interacción */
+  }
+  
+  foreignObject {
+    pointer-events: none; /* Deshabilita interacción */
+  }
+  
+  img:focus {
+    outline: none;
+  }
+  
+  /* Animación suave del logo */
+  .nav-logo img {
+    transform: scale(1); /* Estado inicial sin zoom */
+    transition: transform 0.3s ease-in-out; /* Suaviza la transición tanto al entrar como al salir */
+  }
+  
+  .nav-logo:hover img {
+    transform: scale(1.1); /* Zoom al pasar el cursor */
+  }
+  
+  
+  @keyframes zoom-logo {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  div[style*="zoom-logo"] {
+    animation: zoom-logo 6s ease-in-out infinite; /* Aumenta la duración de 4s a 6s */
+  }
+
+
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
