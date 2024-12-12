@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { CountryRepository } from "../api/supabase/repositories/country/country.repository"
 import type { Industry } from "../types/industry"
 import { IndustryRepository } from "../api/supabase/repositories/industry/industry.repository"
 

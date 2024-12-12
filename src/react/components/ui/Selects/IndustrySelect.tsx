@@ -1,6 +1,4 @@
 import Select, { type Props as ReactSelectProps, type SingleValue } from 'react-select';
-import { Icon } from '@iconify/react';
-import type { Country } from '../../../types/country';
 import type { Industry } from '../../../types/industry';
 
 type IndustryOption = {

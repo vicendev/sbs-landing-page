@@ -12,13 +12,14 @@ import { LoadingSpinner } from "../ui/LoadingSpinner";
 import IndustrySelector from "../ui/Selects/IndustrySelect";
 import { useIndustries } from "../../hooks/useIndustries";
 
+import { PUBLIC_SUPABASE_KEY } from "astro:env/client"
+
 export const LeadForm = () => {
   let captcha: ReCAPTCHA | null;
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const handleCaptchaChange = (token: string | null) => {
     setCaptchaToken(token);
-    console.log("Captcha token:", token);
   };
 
   const { fetchAllCountries, countries } = useCountries();
@@ -30,7 +31,7 @@ export const LeadForm = () => {
   }, []);
 
   const form = useForm<Lead>({
-    onSubmit: async ({ value }) => {},
+    onSubmit: async () => {},
     defaultValues: {
       name: "",
       lastname: "",
@@ -179,7 +180,6 @@ export const LeadForm = () => {
                     className="w-full mt-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                     countries={countries}
                     onChange={(selectedOption) => {
-                      console.log(selectedOption);
                       const option = selectedOption as any;
                       field.handleChange({
                         ...field.state.value,
