@@ -2,7 +2,7 @@ import type { ReactFormExtendedApi } from "@tanstack/react-form";
 import type { Lead } from "../types/lead";
 import { showSuccessModal } from "../components/ui/modals/SuccessModal";
 import { LeadRepository } from "../api/supabase/repositories/leads/leads.repository";
-import env from "astro:env/client";
+import {PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_KEY, PUBLIC_FN_RECAPTCHA_CHECKER } from "astro:env/client";
 
 type Props = {
   captchaToken: string | null;
@@ -11,8 +11,8 @@ type Props = {
 
 export const useLeadForm = ({ captchaToken, form }: Props) => {
   const leadRepository = new LeadRepository({
-    supabaseUrl: env.PUBLIC_SUPABASE_URL,
-    supabaseKey: env.PUBLIC_SUPABASE_KEY,
+    supabaseUrl: PUBLIC_SUPABASE_URL,
+    supabaseKey: PUBLIC_SUPABASE_KEY,
   });
 
   const handleSubmit = async (lead: Lead) => {
@@ -22,11 +22,11 @@ export const useLeadForm = ({ captchaToken, form }: Props) => {
       }
 
       // Enviar el token al servidor para validación
-      const response = await fetch(env.PUBLIC_FN_RECAPTCHA_CHECKER, {
+      const response = await fetch(PUBLIC_FN_RECAPTCHA_CHECKER, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${env.PUBLIC_SUPABASE_KEY}`,
+          Authorization: `Bearer ${PUBLIC_SUPABASE_KEY}`,
         },
         body: JSON.stringify({ token: captchaToken }),
       });
