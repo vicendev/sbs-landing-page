@@ -1,13 +1,12 @@
 ---
 // Importa correctamente el componente ParticlesCustom
-import { CustomParticles } from '../../react/components/ui/CustomParticles';
-import ImageCustom from '../../components/ui/ImageCustom.astro';
-import Logo from '../../assets/logox.png';  
+import { CustomParticles } from "../../react/components/ui/CustomParticles";
+import ImageCustom from "../../components/ui/ImageCustom.astro";
+import Logo from "../../assets/logox.png";
 ---
 
 <!-- Hero Section -->
 <section id="inicio" class="pt-32 pb-20 px-6 relative">
-  
   <div class="absolute inset-0 w-full h-full" style="z-index: 1;">
     <CustomParticles client:only="react" />
   </div>
@@ -22,35 +21,47 @@ import Logo from '../../assets/logox.png';
             Transformamos procesos empresariales con tecnología innovadora
           </h1>
           <p class="text-lg text-gray-200 mb-8">
-            Ofrecemos servicios de ingeniería de procesos e ingeniería de software, especializándonos en modelamiento de procesos empresariales y automatización RPA.
+            Ofrecemos servicios de ingeniería de procesos e ingeniería de
+            software, especializándonos en modelamiento de procesos
+            empresariales y automatización RPA.
           </p>
-          <a href="#contacto" class="bg-[#5C469C] hover:bg-[#D4ADFC] hover:text-gray-900 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
+          <a
+            href="#contacto"
+            class="bg-[#5C469C] hover:bg-[#D4ADFC] hover:text-gray-900 text-white font-semibold py-3 px-8 rounded-lg transition duration-300"
+          >
             Comienza ahora
           </a>
         </div>
-        
+
         <!-- SVG illustration - updated with simplified version -->
-        <svg class="w-full h-auto" viewBox="0 0 400 300" fill="none" style="position: relative; z-index: 2;">
+        <svg
+          class="w-full h-auto"
+          viewBox="0 0 400 300"
+          fill="none"
+          style="position: relative; z-index: 2;"
+        >
           <!-- Círculo morado con animación "respiración" -->
-          <circle cx="200" cy="150" r="100" fill="#6A5ACD">
-            <animate 
-              attributeName="r" 
-              values="95;105;95" 
-              dur="6s" 
-              repeatCount="indefinite"/> 
+          <circle cx="200" cy="150" r="100" fill="#D4ADFC">
+            <animate
+              attributeName="r"
+              values="95;105;95"
+              dur="8s"
+              repeatCount="indefinite"></animate>
           </circle>
 
-          
-            
-             <!-- Contenedor del logo (con animación de zoom) -->
-  <foreignObject x="100" y="50" width="200" height="200">
-    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; animation: zoom-logo 4s ease-in-out infinite;">
-         <ImageCustom imageSource={Logo} style="width: 80%; height: 80%; object-fit: contain;" />
-
-    </div>
-  </foreignObject>
-</svg>
-        </div>
+          <!-- Contenedor del logo (con animación de zoom) -->
+          <foreignObject x="100" y="50" width="200" height="200">
+            <div
+              style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; animation: zoom-logo 4s ease-in-out infinite;"
+            >
+              <ImageCustom
+                imageSource={Logo}
+                style="width: 80%; height: 80%; object-fit: contain;"
+              />
+            </div>
+          </foreignObject>
+        </svg>
       </div>
     </div>
-  </section>
+  </div>
+</section>

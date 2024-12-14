@@ -14,12 +14,12 @@ export const CustomParticles = () => {
       init={particlesInit}
       options={{
         fullScreen: {
-          enable: false, // Desactiva el modo de pantalla completa
-          zIndex: 0, // Asegura que esté en el fondo
+          enable: false,
+          zIndex: 0,
         },
         particles: {
           number: {
-            value: 100,
+            value: 70,
             density: {
               enable: true,
               value_area: 800,
@@ -32,12 +32,12 @@ export const CustomParticles = () => {
             enable: true,
             distance: 150,
             color: "#ffffff",
-            opacity: 0.5,
+            opacity: 0.4,
             width: 1,
           },
           move: {
             enable: true,
-            speed: 2,
+            speed: 1.5,
             outModes: {
               default: "bounce",
             },
@@ -46,7 +46,7 @@ export const CustomParticles = () => {
             value: { min: 1, max: 5 },
           },
           opacity: {
-            value: 0.5,
+            value: 0.3,
           },
         },
         interactivity: {
@@ -54,10 +54,6 @@ export const CustomParticles = () => {
             onHover: {
               enable: true,
               mode: "grab",
-            },
-            onClick: {
-              enable: true,
-              mode: "push",
             },
           },
         },
